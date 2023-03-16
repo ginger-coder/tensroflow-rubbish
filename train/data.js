@@ -23,7 +23,7 @@ const getData = async (trainDir, outputDir) => {
 	classes.forEach((dir, dirIndex) => {
 		fs.readdirSync(`${trainDir}/${dir}`)
 			.filter((n) => n.match(/(jpg|jpeg|png)$/))
-			.slice(0, 2)
+			.slice(0, 10)
 			.forEach((filename) => {
 				const imgPath = `${trainDir}/${dir}/${filename}`;
 				data.push({imgPath, dirIndex});
@@ -31,17 +31,16 @@ const getData = async (trainDir, outputDir) => {
 	});
 
 	tf.util.shuffle(data);
-
 	const ds = tf.data.generator(function* () {
 		const count = data.length;
-		const batchSize = 1;
+		const batchSize = 30;
 		for (let start = 0; start < count; start += batchSize) {
 			const end = Math.min(start + batchSize, count);
 			console.log('当前批次', start);
 			yield tf.tidy(() => {
 				const inputs = [];
 				const labels = [];
-				for (let j = 0; j < end; j += 1) {
+				for (let j = start; j < end; ++j) {
 					const {imgPath, dirIndex} = data[j];
 					const x = img2x(imgPath);
 					inputs.push(x);

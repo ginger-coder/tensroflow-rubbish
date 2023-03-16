@@ -83,6 +83,20 @@
     rimraf "^2.6.2"
     tar "^4.4.6"
 
+"@tensorflow/tfjs-node@^4.2.0":
+  version "4.2.0"
+  resolved "http://npm.xesv5.com/@tensorflow%2ftfjs-node/-/tfjs-node-4.2.0.tgz#b8cd461bd87bebb064f4f074418d33b29adef908"
+  integrity sha512-dkyExfqTjMVDpKLBzHH2b7JWzGK+QORtYswvoNHbeHwx7kvYYRAQeiHxp+xrgry6LdbWfZs88IWCwNGoOiZ21w==
+  dependencies:
+    "@mapbox/node-pre-gyp" "1.0.9"
+    "@tensorflow/tfjs" "4.2.0"
+    adm-zip "^0.5.2"
+    google-protobuf "^3.9.2"
+    https-proxy-agent "^2.2.1"
+    progress "^2.0.0"
+    rimraf "^2.6.2"
+    tar "^4.4.6"
+
 "@tensorflow/tfjs@4.2.0":
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/@tensorflow/tfjs/-/tfjs-4.2.0.tgz#764a56d66aec771694295474e35dd2418fc12d6b"
