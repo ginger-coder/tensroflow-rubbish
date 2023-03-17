@@ -33,7 +33,7 @@ const main = async () => {
         metrics: ['acc']
     });
     await model.fitDataset(ds, {
-        epochs: 20
+        epochs: 300
     });
     await model.save(`file://${process.cwd()}/${OUTPUT_DIR}`);
 };
